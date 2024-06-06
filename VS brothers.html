@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voiceglow Full Screen</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        #VG_OVERLAY_CONTAINER {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="VG_OVERLAY_CONTAINER">
+        <!-- Aqui é onde o Voiceglow renderiza o widget. -->
+    </div>
+
+    <script>
+        (function() {
+            window.VG_CONFIG = {
+                ID: "ypqjalj8be2gzkn",
+                region: 'eu', // 'eu' ou 'na' correspondendo a Europa e América do Norte
+                render: 'full-width', // popup ou full-width
+                stylesheets: [
+                    // CSS base do Voiceglow
+                    "https://storage.googleapis.com/voiceglow-cdn/vg_live_build/styles.css",
+                    // Adicione suas folhas de estilo CSS personalizadas, também pode adicionar URL relativa ('/public/your-file.css)
+                ],
+                // userID: 'USER_ID', // Se quiser usar seu próprio user_id
+                // autostart: true, // Se deseja iniciar automaticamente o chatbot com a mensagem proativa
+            };
+            var VG_SCRIPT = document.createElement("script");
+            VG_SCRIPT.src = "https://storage.googleapis.com/voiceglow-cdn/vg_live_build/vg_bundle.js";
+            VG_SCRIPT.async = true;
+            document.body.appendChild(VG_SCRIPT);
+        })();
+    </script>
+</body>
+</html>
